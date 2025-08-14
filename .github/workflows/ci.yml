@@ -11,7 +11,7 @@ jobs:
   test:
     # IMPORTANT: Set this to your ARC runner scale set INSTALLATION_NAME
     # from your Helm install command, e.g., arc-runner-set
-    runs-on: arc
+    runs-on: self-hosted
 
     steps:
       - name: Checkout
