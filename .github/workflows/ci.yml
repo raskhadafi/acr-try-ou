@@ -1,0 +1,30 @@
+name: CI on ARC runners
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  test:
+    # IMPORTANT: Set this to your ARC runner scale set INSTALLATION_NAME
+    # from your Helm install command, e.g., arc-runner-set
+    runs-on: arc
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.2
+          bundler-cache: true
+
+      - name: Install dependencies
+        run: bundle install --jobs 4 --retry 3
+
+      - name: Run tests
+        run: bundle exec rspec

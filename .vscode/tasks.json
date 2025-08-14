@@ -1,0 +1,19 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "bundle install and run rspec",
+			"type": "shell",
+			"command": "bash",
+			"args": [
+				"-lc",
+				"ruby -v || true; gem -v || true; bundle -v || true; if command -v bundle >/dev/null 2>&1; then bundle install; bundle exec rspec; else echo \"Bundler not available in this environment\"; fi"
+			],
+			"isBackground": false,
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build"
+		}
+	]
+}

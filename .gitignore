@@ -67,3 +67,21 @@ yarn-debug.log*
 /storage/*
 !/storage/.keep
 /public/uploads
+
+# Ruby / Bundler
+/.bundle
+/vendor/bundle
+Gemfile.lock
+
+# Logs and temp
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+
+# Node (if added)
+node_modules/
+
+# dotenv
+.env
+.env*.local
